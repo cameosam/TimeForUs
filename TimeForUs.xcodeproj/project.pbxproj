@@ -14,6 +14,10 @@
 		0AA598C329A43A610013C76B /* TimeForUs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598C129A43A610013C76B /* TimeForUs.xcdatamodeld */; };
 		0AA598C529A43A630013C76B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA598C429A43A630013C76B /* Assets.xcassets */; };
 		0AA598C829A43A630013C76B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA598C629A43A630013C76B /* LaunchScreen.storyboard */; };
+		0ADE2AF229A44AD300B25DCA /* TimeZoneBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */; };
+		0ADE2AF429A44AE600B25DCA /* TimeZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */; };
+		0ADE2AF629A44AF700B25DCA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF529A44AF700B25DCA /* Item.swift */; };
+		0ADE2AF829A44C8700B25DCA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF729A44C8700B25DCA /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		0AA598C429A43A630013C76B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AA598C729A43A630013C76B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AA598C929A43A630013C76B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneBrain.swift; sourceTree = "<group>"; };
+		0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneItem.swift; sourceTree = "<group>"; };
+		0ADE2AF529A44AF700B25DCA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0ADE2AF729A44C8700B25DCA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +68,34 @@
 			children = (
 				0AA598B829A43A610013C76B /* AppDelegate.swift */,
 				0AA598BA29A43A610013C76B /* SceneDelegate.swift */,
-				0AA598BC29A43A610013C76B /* ViewController.swift */,
+				0ADE2AF929A4A25B00B25DCA /* Model */,
+				0ADE2AEF29A448CA00B25DCA /* Controllers */,
 				0AA598BE29A43A610013C76B /* Main.storyboard */,
 				0AA598C429A43A630013C76B /* Assets.xcassets */,
 				0AA598C629A43A630013C76B /* LaunchScreen.storyboard */,
 				0AA598C929A43A630013C76B /* Info.plist */,
-				0AA598C129A43A610013C76B /* TimeForUs.xcdatamodeld */,
 			);
 			path = TimeForUs;
+			sourceTree = "<group>";
+		};
+		0ADE2AEF29A448CA00B25DCA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0AA598BC29A43A610013C76B /* ViewController.swift */,
+				0ADE2AF729A44C8700B25DCA /* TableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0ADE2AF929A4A25B00B25DCA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AA598C129A43A610013C76B /* TimeForUs.xcdatamodeld */,
+				0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */,
+				0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */,
+				0ADE2AF529A44AF700B25DCA /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA598C329A43A610013C76B /* TimeForUs.xcdatamodeld in Sources */,
+				0ADE2AF429A44AE600B25DCA /* TimeZoneItem.swift in Sources */,
 				0AA598BD29A43A610013C76B /* ViewController.swift in Sources */,
+				0ADE2AF829A44C8700B25DCA /* TableViewController.swift in Sources */,
+				0ADE2AF229A44AD300B25DCA /* TimeZoneBrain.swift in Sources */,
+				0ADE2AF629A44AF700B25DCA /* Item.swift in Sources */,
 				0AA598B929A43A610013C76B /* AppDelegate.swift in Sources */,
 				0AA598BB29A43A610013C76B /* SceneDelegate.swift in Sources */,
 			);
