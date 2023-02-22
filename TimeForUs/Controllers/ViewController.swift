@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -14,19 +15,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var itemArray = [Item]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        let newItem = Item()
-        newItem.location = "test"
-        itemArray.append(newItem)
+        loadItems()
 
         let currentTimeZone = TimeZone.current
         let currentTimeZoneCity = currentTimeZone.identifier.split(separator: "/").last!
         currentTimeZoneLabel.text = String(currentTimeZoneCity)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadItems()
+        tableView.reloadData()
     }
     
     @IBAction func findButtonPressed(_ sender: UIBarButtonItem) {
@@ -36,6 +41,16 @@ class ViewController: UIViewController {
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "addTimes", sender: self)
     }
+    
+    func loadItems() {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -50,7 +65,7 @@ extension ViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row].location
+        cell.textLabel?.text = itemArray[indexPath.row].name
         return cell
     }
     

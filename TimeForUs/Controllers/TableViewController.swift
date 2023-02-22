@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
     var timeZoneBrain = TimeZoneBrain()
     var allLocations = [TimeZoneItem]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +41,10 @@ class TableViewController: UITableViewController {
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Timezone", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
-           
-            let newTimeZone = Item()
+            let newTimeZone = Item(context: self.context)
             newTimeZone.location = self.allLocations[indexPath.row].location
             newTimeZone.name = textField.text!
-//           save location to core data
+            self.saveItems()
         }
 
         alert.addAction(action)
@@ -54,6 +55,15 @@ class TableViewController: UITableViewController {
         }
 
         present(alert, animated: true, completion: nil)
+    }
+    
+    func saveItems() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+        self.tableView.reloadData()
     }
 }
 
