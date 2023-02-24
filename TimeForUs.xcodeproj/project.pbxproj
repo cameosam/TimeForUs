@@ -17,6 +17,7 @@
 		0ADE2AF229A44AD300B25DCA /* TimeZoneBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */; };
 		0ADE2AF429A44AE600B25DCA /* TimeZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */; };
 		0ADE2AF829A44C8700B25DCA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF729A44C8700B25DCA /* TableViewController.swift */; };
+		AA83D64CF1D234B0A4ABC12F /* Pods_TimeForUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F379DAF026B862E7952E2E /* Pods_TimeForUs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneBrain.swift; sourceTree = "<group>"; };
 		0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneItem.swift; sourceTree = "<group>"; };
 		0ADE2AF729A44C8700B25DCA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		35F379DAF026B862E7952E2E /* Pods_TimeForUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeForUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CE002994EDBBE3232E7ACCE /* Pods-TimeForUs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeForUs.debug.xcconfig"; path = "Target Support Files/Pods-TimeForUs/Pods-TimeForUs.debug.xcconfig"; sourceTree = "<group>"; };
+		E2ED6FFD5A658708C489803A /* Pods-TimeForUs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeForUs.release.xcconfig"; path = "Target Support Files/Pods-TimeForUs/Pods-TimeForUs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA83D64CF1D234B0A4ABC12F /* Pods_TimeForUs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				0AA598B729A43A610013C76B /* TimeForUs */,
 				0AA598B629A43A610013C76B /* Products */,
+				5485FCBC9EE4A8FEC568058F /* Pods */,
+				F69DEA1087210935E2A26330 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +76,8 @@
 				0ADE2AF929A4A25B00B25DCA /* Model */,
 				0ADE2AEF29A448CA00B25DCA /* Controllers */,
 				0AA598BE29A43A610013C76B /* Main.storyboard */,
-				0AA598C429A43A630013C76B /* Assets.xcassets */,
 				0AA598C629A43A630013C76B /* LaunchScreen.storyboard */,
+				0AA598C429A43A630013C76B /* Assets.xcassets */,
 				0AA598C929A43A630013C76B /* Info.plist */,
 			);
 			path = TimeForUs;
@@ -95,6 +102,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5485FCBC9EE4A8FEC568058F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CE002994EDBBE3232E7ACCE /* Pods-TimeForUs.debug.xcconfig */,
+				E2ED6FFD5A658708C489803A /* Pods-TimeForUs.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F69DEA1087210935E2A26330 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35F379DAF026B862E7952E2E /* Pods_TimeForUs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AA598CC29A43A630013C76B /* Build configuration list for PBXNativeTarget "TimeForUs" */;
 			buildPhases = (
+				C132890FC155D92756B7BC3B /* [CP] Check Pods Manifest.lock */,
 				0AA598B129A43A610013C76B /* Sources */,
 				0AA598B229A43A610013C76B /* Frameworks */,
 				0AA598B329A43A610013C76B /* Resources */,
+				D7AE75685CEACFD554D21E3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +186,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C132890FC155D92756B7BC3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeForUs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7AE75685CEACFD554D21E3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeForUs/Pods-TimeForUs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeForUs/Pods-TimeForUs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeForUs/Pods-TimeForUs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AA598B129A43A610013C76B /* Sources */ = {
@@ -314,6 +382,7 @@
 		};
 		0AA598CD29A43A630013C76B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CE002994EDBBE3232E7ACCE /* Pods-TimeForUs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +411,7 @@
 		};
 		0AA598CE29A43A630013C76B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ED6FFD5A658708C489803A /* Pods-TimeForUs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

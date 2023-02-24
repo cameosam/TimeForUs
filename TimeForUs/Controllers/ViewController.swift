@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import SwipeCellKit
 
 class ViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         loadItems()
+        tableView.rowHeight = 80.0
 
         let currentTimeZone = TimeZone.current
         let currentTimeZoneCity = currentTimeZone.identifier.split(separator: "/").last!
@@ -59,14 +61,38 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeCellKit.SwipeActionsOrientation) -> [SwipeCellKit.SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+           let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+               self.context.delete(self.itemArray[indexPath.row])
+               self.itemArray.remove(at: indexPath.row)
+               self.saveItems()
+           }
+           deleteAction.image = UIImage(named: "delete-icon")
+
+           return [deleteAction]
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
         cell.textLabel?.text = itemArray[indexPath.row].name
         return cell
+    }
+    
+    func saveItems() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+        self.tableView.reloadData()
     }
     
 }
