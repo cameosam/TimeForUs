@@ -40,14 +40,13 @@ class TableViewController: UITableViewController {
         
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Timezone", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+        alert.addAction(UIAlertAction(title: "Add", style: .default) { (action) in
             let newTimeZone = Item(context: self.context)
             newTimeZone.location = self.allLocations[indexPath.row].location
             newTimeZone.name = textField.text!
             self.saveItems()
-        }
-
-        alert.addAction(action)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
 
         alert.addTextField { (field) in
             textField = field
