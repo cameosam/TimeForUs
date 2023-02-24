@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9E154829A88C63003CE85E /* LocationTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E154629A88C63003CE85E /* LocationTimeCell.swift */; };
+		0A9E154929A88C63003CE85E /* LocationTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9E154729A88C63003CE85E /* LocationTimeCell.xib */; };
 		0AA598B929A43A610013C76B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598B829A43A610013C76B /* AppDelegate.swift */; };
 		0AA598BB29A43A610013C76B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598BA29A43A610013C76B /* SceneDelegate.swift */; };
 		0AA598BD29A43A610013C76B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598BC29A43A610013C76B /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A9E154629A88C63003CE85E /* LocationTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTimeCell.swift; sourceTree = "<group>"; };
+		0A9E154729A88C63003CE85E /* LocationTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTimeCell.xib; sourceTree = "<group>"; };
 		0AA598B529A43A610013C76B /* TimeForUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeForUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA598B829A43A610013C76B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AA598BA29A43A610013C76B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9E154529A88BB4003CE85E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A9E154629A88C63003CE85E /* LocationTimeCell.swift */,
+				0A9E154729A88C63003CE85E /* LocationTimeCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0AA598AC29A43A610013C76B = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +87,7 @@
 				0AA598B829A43A610013C76B /* AppDelegate.swift */,
 				0AA598BA29A43A610013C76B /* SceneDelegate.swift */,
 				0ADE2AF929A4A25B00B25DCA /* Model */,
+				0A9E154529A88BB4003CE85E /* Views */,
 				0ADE2AEF29A448CA00B25DCA /* Controllers */,
 				0AA598BE29A43A610013C76B /* Main.storyboard */,
 				0AA598C629A43A630013C76B /* LaunchScreen.storyboard */,
@@ -180,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA598C829A43A630013C76B /* LaunchScreen.storyboard in Resources */,
+				0A9E154929A88C63003CE85E /* LocationTimeCell.xib in Resources */,
 				0AA598C529A43A630013C76B /* Assets.xcassets in Resources */,
 				0AA598C029A43A610013C76B /* Main.storyboard in Resources */,
 			);
@@ -235,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA598C329A43A610013C76B /* TimeForUs.xcdatamodeld in Sources */,
+				0A9E154829A88C63003CE85E /* LocationTimeCell.swift in Sources */,
 				0ADE2AF429A44AE600B25DCA /* TimeZoneItem.swift in Sources */,
 				0AA598BD29A43A610013C76B /* ViewController.swift in Sources */,
 				0ADE2AF829A44C8700B25DCA /* TableViewController.swift in Sources */,

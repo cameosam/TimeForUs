@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         loadItems()
+        tableView.register(UINib(nibName: "LocationTimeCell", bundle: nil), forCellReuseIdentifier: "ReuseableCell")
         tableView.rowHeight = 80.0
 
         let currentTimeZone = TimeZone.current
@@ -80,9 +81,10 @@ extension ViewController: UITableViewDataSource, SwipeTableViewCellDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath) as! SwipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReuseableCell", for: indexPath) as! LocationTimeCell
         cell.delegate = self
-        cell.textLabel?.text = itemArray[indexPath.row].name
+        cell.label.text = itemArray[indexPath.row].name
+        cell.time.text = "Current Time"
         return cell
     }
     
