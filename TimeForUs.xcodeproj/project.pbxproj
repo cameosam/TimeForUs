@@ -16,8 +16,7 @@
 		0AA598C329A43A610013C76B /* TimeForUs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AA598C129A43A610013C76B /* TimeForUs.xcdatamodeld */; };
 		0AA598C529A43A630013C76B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA598C429A43A630013C76B /* Assets.xcassets */; };
 		0AA598C829A43A630013C76B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA598C629A43A630013C76B /* LaunchScreen.storyboard */; };
-		0ADE2AF229A44AD300B25DCA /* TimeZoneBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */; };
-		0ADE2AF429A44AE600B25DCA /* TimeZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */; };
+		0ADE2AF229A44AD300B25DCA /* AllTimeZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF129A44AD300B25DCA /* AllTimeZones.swift */; };
 		0ADE2AF829A44C8700B25DCA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE2AF729A44C8700B25DCA /* TableViewController.swift */; };
 		AA83D64CF1D234B0A4ABC12F /* Pods_TimeForUs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F379DAF026B862E7952E2E /* Pods_TimeForUs.framework */; };
 /* End PBXBuildFile section */
@@ -34,8 +33,7 @@
 		0AA598C429A43A630013C76B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AA598C729A43A630013C76B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AA598C929A43A630013C76B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneBrain.swift; sourceTree = "<group>"; };
-		0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneItem.swift; sourceTree = "<group>"; };
+		0ADE2AF129A44AD300B25DCA /* AllTimeZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimeZones.swift; sourceTree = "<group>"; };
 		0ADE2AF729A44C8700B25DCA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		35F379DAF026B862E7952E2E /* Pods_TimeForUs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeForUs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE002994EDBBE3232E7ACCE /* Pods-TimeForUs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeForUs.debug.xcconfig"; path = "Target Support Files/Pods-TimeForUs/Pods-TimeForUs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,9 +107,8 @@
 		0ADE2AF929A4A25B00B25DCA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0ADE2AF129A44AD300B25DCA /* AllTimeZones.swift */,
 				0AA598C129A43A610013C76B /* TimeForUs.xcdatamodeld */,
-				0ADE2AF129A44AD300B25DCA /* TimeZoneBrain.swift */,
-				0ADE2AF329A44AE600B25DCA /* TimeZoneItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,10 +248,9 @@
 			files = (
 				0AA598C329A43A610013C76B /* TimeForUs.xcdatamodeld in Sources */,
 				0A9E154829A88C63003CE85E /* LocationTimeCell.swift in Sources */,
-				0ADE2AF429A44AE600B25DCA /* TimeZoneItem.swift in Sources */,
 				0AA598BD29A43A610013C76B /* ViewController.swift in Sources */,
 				0ADE2AF829A44C8700B25DCA /* TableViewController.swift in Sources */,
-				0ADE2AF229A44AD300B25DCA /* TimeZoneBrain.swift in Sources */,
+				0ADE2AF229A44AD300B25DCA /* AllTimeZones.swift in Sources */,
 				0AA598B929A43A610013C76B /* AppDelegate.swift in Sources */,
 				0AA598BB29A43A610013C76B /* SceneDelegate.swift in Sources */,
 			);

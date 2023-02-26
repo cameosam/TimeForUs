@@ -10,13 +10,13 @@ import CoreData
 
 class TableViewController: UITableViewController {
     
-    var timeZoneBrain = TimeZoneBrain()
-    var allLocations = [TimeZoneItem]()
+    var allTimeZones = AllTimeZones()
+    var allLocations = [Item]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        allLocations = timeZoneBrain.getTimeZones()
+        allLocations = allTimeZones.getTimeZones()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,7 +29,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeZoneCell", for: indexPath)
-        cell.textLabel?.text = String(allLocations[indexPath.row].name)
+        cell.textLabel?.text = String(allLocations[indexPath.row].name!)
         return cell
     }
     
@@ -48,7 +48,7 @@ class TableViewController: UITableViewController {
 
         alert.addTextField { (field) in
             textField = field
-            textField.text = String(self.allLocations[indexPath.row].name.split(separator: ",").first!)
+            textField.text = String(self.allLocations[indexPath.row].name!.split(separator: ",").first!)
         }
 
         present(alert, animated: true, completion: nil)
@@ -69,9 +69,9 @@ extension TableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count != 0 {
-            allLocations = timeZoneBrain.getTimeZones().filter{$0.name.localizedCaseInsensitiveContains(searchBar.text!)}
+            allLocations = allTimeZones.getTimeZones().filter{$0.name!.localizedCaseInsensitiveContains(searchBar.text!)}
         } else {
-            allLocations = timeZoneBrain.getTimeZones()
+            allLocations = allTimeZones.getTimeZones()
         }
         tableView.reloadData()
     }
