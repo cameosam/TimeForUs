@@ -9,44 +9,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReuseableCell" id="KGk-i7-Jjw" customClass="LocationTimeCell" customModule="TimeForUs" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReuseableCell" rowHeight="55" id="KGk-i7-Jjw" customClass="LocationTimeCell" customModule="TimeForUs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="55"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Tj-Zl-f7K">
-                        <rect key="frame" x="10" y="10" width="300" height="24"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Tj-Zl-f7K">
+                        <rect key="frame" x="15" y="0.0" width="359" height="55"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-EQ-egH">
-                                <rect key="frame" x="0.0" y="0.0" width="257.33333333333331" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-EQ-egH">
+                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wo8-TV-3y6">
-                                <rect key="frame" x="262.33333333333331" y="0.0" width="37.666666666666686" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="3JH-Dm-vrC">
+                                <rect key="frame" x="51" y="0.0" width="308" height="55"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.5"/>
+                                <connections>
+                                    <action selector="DateTimeChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="bba-1b-pAj"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9Tj-Zl-f7K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Bin-LM-B82"/>
-                    <constraint firstAttribute="bottom" secondItem="9Tj-Zl-f7K" secondAttribute="bottom" constant="10" id="ox4-T5-JgI"/>
-                    <constraint firstAttribute="trailing" secondItem="9Tj-Zl-f7K" secondAttribute="trailing" constant="10" id="pCK-Lo-Eta"/>
-                    <constraint firstItem="9Tj-Zl-f7K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qT8-a7-zfG"/>
+                    <constraint firstAttribute="bottom" secondItem="9Tj-Zl-f7K" secondAttribute="bottom" id="9mj-hE-zuT"/>
+                    <constraint firstItem="9Tj-Zl-f7K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="o81-IV-Vz8"/>
+                    <constraint firstItem="9Tj-Zl-f7K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ouP-1C-uhG"/>
+                    <constraint firstAttribute="trailing" secondItem="9Tj-Zl-f7K" secondAttribute="trailing" id="pMU-34-RoY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="datePicker" destination="3JH-Dm-vrC" id="ezd-3e-47L"/>
                 <outlet property="label" destination="mPK-EQ-egH" id="RoK-9j-iI3"/>
-                <outlet property="time" destination="Wo8-TV-3y6" id="zHe-xC-DuK"/>
             </connections>
-            <point key="canvasLocation" x="131.29770992366412" y="-11.267605633802818"/>
+            <point key="canvasLocation" x="267.17557251908397" y="-7.394366197183099"/>
         </tableViewCell>
     </objects>
 </document>

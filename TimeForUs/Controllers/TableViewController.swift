@@ -19,8 +19,6 @@ class TableViewController: UITableViewController {
         allLocations = timeZoneBrain.getTimeZones()
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -67,7 +65,6 @@ class TableViewController: UITableViewController {
 }
 
 
-//MARK: - Search bar methods
 extension TableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

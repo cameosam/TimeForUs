@@ -17,53 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-a7-Dll">
-                                <rect key="frame" x="20" y="123" width="353" height="695"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ao-s6-TuS">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentTimezone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ3-GD-GIw">
-                                                <rect key="frame" x="0.0" y="0.0" width="129" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Pm3-le-1aa">
-                                                <rect key="frame" x="139" y="0.0" width="214" height="50"/>
-                                            </datePicker>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1G-x9-N57">
-                                        <rect key="frame" x="0.0" y="70" width="353" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="1AK-rm-Z5o"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="find time!">
-                                            <color key="baseBackgroundColor" name="AccentColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="findButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7vQ-77-8ny"/>
-                                        </connections>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bfF-LU-k6N">
-                                        <rect key="frame" x="0.0" y="140" width="353" height="555"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </tableView>
-                                </subviews>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bfF-LU-k6N">
+                                <rect key="frame" x="0.0" y="15" width="378" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ntd-a7-Dll" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="38T-ZJ-hk3"/>
-                            <constraint firstItem="ntd-a7-Dll" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JHn-Ac-Psv"/>
-                            <constraint firstAttribute="trailing" secondItem="ntd-a7-Dll" secondAttribute="trailing" constant="20" id="OTS-SA-kCy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ntd-a7-Dll" secondAttribute="bottom" id="pxy-ta-ySh"/>
+                            <constraint firstItem="bfF-LU-k6N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hqc-Q5-Gal"/>
+                            <constraint firstItem="bfF-LU-k6N" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-15" id="NyI-FJ-xEZ"/>
+                            <constraint firstItem="bfF-LU-k6N" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="ave-5f-3r8"/>
+                            <constraint firstItem="bfF-LU-k6N" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="l0S-cb-iVy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="time for us" id="6sH-nR-kdo">
                         <barButtonItem key="backBarButtonItem" title="back" id="qD9-6Z-3V8"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="8sm-dP-2XC">
+                            <color key="tintColor" name="AccentColor"/>
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" id="fiO-Il-Fyk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8fY-jj-rOh">
                             <color key="tintColor" name="AccentColor"/>
                             <connections>
@@ -72,8 +47,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="currentTimeZoneLabel" destination="nQ3-GD-GIw" id="kYE-sE-gI0"/>
-                        <outlet property="datePicker" destination="Pm3-le-1aa" id="fZe-IF-fFL"/>
                         <outlet property="tableView" destination="bfF-LU-k6N" id="4gi-rn-rJ2"/>
                         <segue destination="K64-Z1-YtO" kind="show" identifier="addTimes" id="vul-aN-WEM"/>
                     </connections>
@@ -82,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="947" y="-35"/>
         </scene>
-        <!--Table View Controller-->
+        <!--add locations-->
         <scene sceneID="OsQ-en-Kxh">
             <objects>
                 <tableViewController id="K64-Z1-YtO" customClass="TableViewController" customModule="TimeForUs" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,7 +86,7 @@
                             <outlet property="delegate" destination="K64-Z1-YtO" id="YPq-Kd-Ea8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jos-WF-GAY"/>
+                    <navigationItem key="navigationItem" title="add locations" id="jos-WF-GAY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJS-se-Fdg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

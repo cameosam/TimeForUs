@@ -8,20 +8,27 @@
 import UIKit
 import SwipeCellKit
 
+protocol CustomCellUpdater {
+    func updateTableView(date: Date)
+}
+
 class LocationTimeCell: SwipeTableViewCell {
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+
+    var updaterDelegate: CustomCellUpdater?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
+    @IBAction func DateTimeChanged(_ sender: Any) {
+        self.updaterDelegate?.updateTableView(date: self.datePicker.date)
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
