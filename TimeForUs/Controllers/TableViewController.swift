@@ -69,7 +69,7 @@ extension TableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count != 0 {
-            allLocations = timeZoneBrain.getTimeZones().filter{$0.name.contains(searchBar.text!)}
+            allLocations = timeZoneBrain.getTimeZones().filter{$0.name.localizedCaseInsensitiveContains(searchBar.text!)}
         } else {
             allLocations = timeZoneBrain.getTimeZones()
         }

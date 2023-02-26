@@ -80,7 +80,13 @@ extension ViewController: UITableViewDelegate {
         
         alert.addTextField { (field) in
             textField = field
-            textField.placeholder = String(self.itemArray[indexPath.row].location!.split(separator: ",").first!)
+            let location = self.itemArray[indexPath.row].location!
+            let clean_location = location.replacingOccurrences(of: "_", with: " ").components(separatedBy: "/")
+            let city = clean_location.last! as String
+            let region = clean_location.first! as String
+            let abv = TimeZone(identifier: location)!.abbreviation()! as String
+            let name = "\(city), \(region) (\(abv))"
+            textField.placeholder = name
         }
         
         present(alert, animated: true, completion: nil)

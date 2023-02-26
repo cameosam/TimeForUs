@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Tj-Zl-f7K">
-                        <rect key="frame" x="15" y="0.0" width="359" height="55"/>
+                        <rect key="frame" x="20" y="0.0" width="339" height="55"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPK-EQ-egH">
                                 <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="55"/>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="3JH-Dm-vrC">
-                                <rect key="frame" x="51" y="0.0" width="308" height="55"/>
+                                <rect key="frame" x="51.333333333333343" y="0.0" width="287.66666666666663" height="55"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.5"/>
                                 <connections>
                                     <action selector="DateTimeChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="bba-1b-pAj"/>
@@ -37,9 +37,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="9Tj-Zl-f7K" secondAttribute="bottom" id="9mj-hE-zuT"/>
-                    <constraint firstItem="9Tj-Zl-f7K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="o81-IV-Vz8"/>
+                    <constraint firstItem="9Tj-Zl-f7K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="o81-IV-Vz8"/>
                     <constraint firstItem="9Tj-Zl-f7K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ouP-1C-uhG"/>
-                    <constraint firstAttribute="trailing" secondItem="9Tj-Zl-f7K" secondAttribute="trailing" id="pMU-34-RoY"/>
+                    <constraint firstAttribute="trailing" secondItem="9Tj-Zl-f7K" secondAttribute="trailing" constant="15" id="pMU-34-RoY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
