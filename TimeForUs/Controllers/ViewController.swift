@@ -22,6 +22,7 @@ class ViewController: UIViewController, CustomCellUpdater {
         tableView.delegate = self
         tableView.dataSource = self
         loadItems()
+        loadDefaultLocation()
         tableView.register(UINib(nibName: "LocationTimeCell", bundle: nil), forCellReuseIdentifier: "ReuseableCell")
         tableView.rowHeight = 70.0
     }
@@ -36,21 +37,8 @@ class ViewController: UIViewController, CustomCellUpdater {
     }
     
     @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
-        let rows = itemArray.count-1
-        if (rows > -1) {
-            for row in 0...rows {
-                context.delete(itemArray[row])
-            }
-            itemArray = [Item]()
-        }
-        
-        let currentTimeZone = TimeZone.current
-        let newTimeZone = Item(context: context)
-        newTimeZone.location = currentTimeZone.identifier
-        newTimeZone.name = String(currentTimeZone.identifier.split(separator: "/").last!)
-        
-        saveItems()
         currentTime = Date()
+        loadDefaultLocation()
         loadItems()
     }
     
@@ -62,6 +50,16 @@ class ViewController: UIViewController, CustomCellUpdater {
             print("Error fetching data from context \(error)")
         }
         tableView.reloadData()
+    }
+    
+    func loadDefaultLocation(){
+        if itemArray.count == 0 {
+            let currentTimeZone = TimeZone.current
+            let newTimeZone = Item(context: context)
+            newTimeZone.location = currentTimeZone.identifier
+            newTimeZone.name = String(currentTimeZone.identifier.split(separator: "/").last!)
+            saveItems()
+        }
     }
     
 }
@@ -102,7 +100,6 @@ extension ViewController: UITableViewDataSource, SwipeTableViewCellDelegate {
             self.itemArray.remove(at: indexPath.row)
             self.saveItems()
         }
-        deleteAction.image = UIImage(named: "delete-icon")
         
         return [deleteAction]
     }
