@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-import SwipeCellKit
 
 class ViewController: UIViewController, CustomCellUpdater {
     
@@ -91,24 +90,23 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-extension ViewController: UITableViewDataSource, SwipeTableViewCellDelegate {
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeCellKit.SwipeActionsOrientation) -> [SwipeCellKit.SwipeAction]? {
-        guard orientation == .right else { return nil }
-        
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            self.context.delete(self.itemArray[indexPath.row])
-            self.itemArray.remove(at: indexPath.row)
-            self.saveItems()
-        }
-        
-        return [deleteAction]
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
-    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        options.transitionStyle = .border
-        return options
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+                self.context.delete(self.itemArray[indexPath.row])
+                self.itemArray.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.saveItems()
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash")
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,7 +115,6 @@ extension ViewController: UITableViewDataSource, SwipeTableViewCellDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReuseableCell", for: indexPath) as! LocationTimeCell
-        cell.delegate = self
         cell.updaterDelegate = self
         cell.label.text = itemArray[indexPath.row].name
         cell.datePicker.timeZone = TimeZone(identifier: itemArray[indexPath.row].location!)

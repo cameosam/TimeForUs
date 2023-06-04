@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import SwipeCellKit
 
 protocol CustomCellUpdater {
     func updateTableView(date: Date)
 }
 
-class LocationTimeCell: SwipeTableViewCell {
+class LocationTimeCell: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
