@@ -7,6 +7,4 @@
 
 View | Edit | Delete | Add
 ------------ | ------------- | ------------- | ------------- 
-![mainscreene](/screenshots/TimeForUs1.png) | ![TimeForUs2](/screenshots/TimeForUs2.png) | ![TimeForUs4](/screenshots/TimeForUs4.png) | ![TimeForUs6](/screenshots/TimeForUs6.png)
-
-
+<img src = "screenshots/TimeForUs1.png" width = 200> | <img src = "screenshots/TimeForUs2.png" width = 200> | <img src = "screenshots/TimeForUs3.png" width = 200> | <img src = "screenshots/TimeForUs6.png" width = 200>
